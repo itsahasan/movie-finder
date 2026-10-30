@@ -1,7 +1,6 @@
 export const colors = {
   background: "#121212",
   card: "#1E1E1E",
-  toast: "#2C2C2C",
   accent: "#FF8A1F",
   accentPressed: "#E07410",
   text: "#FFFFFF",
@@ -10,7 +9,6 @@ export const colors = {
 };
 
 export const spacing = {
-  tiny: 4,
   small: 8,
   medium: 16,
   large: 24,
@@ -27,10 +25,4 @@ export const fontSizes = {
   medium: 16,
   large: 20,
   title: 28,
-};
-
-export const sizes = {
-  touchTarget: 44,
-  bodyLineHeight: 24,
-  backdropMaxHeight: 220,
 };

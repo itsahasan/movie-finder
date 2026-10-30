@@ -13,8 +13,7 @@
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
-      },
-      "package": "com.nafiz0.moviefinder"
+      }
     },
     "plugins": [
       "expo-router",
@@ -23,7 +22,7 @@
         {
           "backgroundColor": "#121212",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 280
+          "imageWidth": 76
         }
       ],
       "expo-sqlite"
