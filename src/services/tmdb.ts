@@ -6,7 +6,10 @@ const BACKDROP_URL = "https://image.tmdb.org/t/p/w780";
 
 type MovieList = { results: Movie[] };
 
-async function request(path: string, params: Record<string, string> = {}) {
+async function request(
+  path: string,
+  params: Record<string, string> = {},
+): Promise<Response> {
   const query = new URLSearchParams({
     api_key: process.env.EXPO_PUBLIC_TMDB_API_KEY ?? "",
     ...params,
@@ -19,24 +22,29 @@ async function request(path: string, params: Record<string, string> = {}) {
 }
 
 export async function getPopularMovies(): Promise<Movie[]> {
-  const data: MovieList = await request("/movie/popular");
+  const response = await request("/movie/popular");
+  const data: MovieList = await response.json();
   return data.results;
 }
 
 export async function searchMovies(query: string): Promise<Movie[]> {
-  const data: MovieList = await request("/search/movie", { query });
+  const response = await request("/search/movie", { query });
+  const data: MovieList = await response.json();
   return data.results;
 }
 
 export async function getMoviesByGenre(genreId: number): Promise<Movie[]> {
-  const data: MovieList = await request("/discover/movie", {
+  const response = await request("/discover/movie", {
     with_genres: String(genreId),
   });
+  const data: MovieList = await response.json();
   return data.results;
 }
 
 export async function getMovieDetails(id: number): Promise<MovieDetails> {
-  return request(`/movie/${id}`);
+  const response = await request(`/movie/${id}`);
+  const data: MovieDetails = await response.json();
+  return data;
 }
 
 export function getPosterUrl(path: string | null): string | null {
