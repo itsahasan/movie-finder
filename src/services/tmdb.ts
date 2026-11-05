@@ -18,7 +18,7 @@ async function request(
   if (!response.ok) {
     throw new Error(`TMDB request failed (${response.status})`);
   }
-  return response.json();
+  return response;
 }
 
 export async function getPopularMovies(): Promise<Movie[]> {

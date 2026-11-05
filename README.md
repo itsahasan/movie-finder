@@ -68,6 +68,24 @@ An Android app to find movies and keep a watchlist. Movie data comes from TMDB (
 
    Expo opens the app on the emulator or phone. The first start can take a minute. If Expo Go is missing or too old on the emulator, Expo installs the right version.
 
+## Run on a phone with the Expo Go QR code
+
+1. Install **Expo Go** from the Play Store on the phone.
+2. Connect the phone and the computer to the same Wi-Fi network.
+3. Do steps 1 to 3 of "How to run" above (install packages and create `.env`).
+4. Start the app with a clean cache:
+
+   ```
+   npx expo start -c
+   ```a
+
+5. Open Expo Go on the phone, tap **Scan QR code**, and scan the QR code shown in the terminal.
+6. Wait for the app to load. The Home tab shows popular movies.
+
+If the phone cannot connect, stop the app with `Ctrl+C` and run `npx expo start --tunnel` instead.
+
+The Watchlist tab uses SQLite. If Expo Go shows `Cannot find native module 'ExpoSQLite'`, connect the phone with USB or start an emulator and run `npx expo run:android`.
+
 ## Check the code
 
 ```
